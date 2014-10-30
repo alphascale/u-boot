@@ -1,5 +1,5 @@
 /*
- * (C) Copyright alphascale 
+ * (C) Copyright alphascale
  *
  * (C) Copyright 2014 Du Huanpeng <u74147@gmail.com>
  *
@@ -15,17 +15,16 @@
 
 /*
  *  Initialize the Watchdog.
- *  param  None. 
  */
 void wdt_init(void)
 {
-	writel(1<<26,HW_PRESETCTRL0+8); /* reset watchdog */
-	writel(1<<26,HW_PRESETCTRL0+4); /* clear watchdog reset */
-	writel(1<<26,HW_AHBCLKCTRL0+4);
-	writel(1,HW_WDTCLKSEL);
-	writel(0,HW_WDTCLKUEN);
-	writel(1,HW_WDTCLKUEN);
-	writel(480,HW_WDTCLKDIV);       /* clkdiv=480 1MHz */
+	writel(1<<26, HW_PRESETCTRL0+8); /* reset watchdog */
+	writel(1<<26, HW_PRESETCTRL0+4); /* clear watchdog reset */
+	writel(1<<26, HW_AHBCLKCTRL0+4);
+	writel(1, HW_WDTCLKSEL);
+	writel(0, HW_WDTCLKUEN);
+	writel(1, HW_WDTCLKUEN);
+	writel(480, HW_WDTCLKDIV);       /* clkdiv=480 1MHz */
 
 }
 
@@ -38,7 +37,7 @@ void wdt_init(void)
  */
 void wdt_setmode(u32 mode)
 {
-	writel(mode,HW_WATCHDOG_WDMOD);
+	writel(mode, HW_WATCHDOG_WDMOD);
 }
 
 /*
@@ -48,7 +47,7 @@ void wdt_setmode(u32 mode)
  */
 void wdt_setreload(u32 reload)
 {
-	writel(reload,HW_WATCHDOG_WDTC);  
+	writel(reload, HW_WATCHDOG_WDTC);
 }
 
 /*
@@ -57,8 +56,8 @@ void wdt_setreload(u32 reload)
  */
 void wdt_reloadcounter(void)
 {
-	writel(0xaa,HW_WATCHDOG_WDFEED);
-	writel(0x55,HW_WATCHDOG_WDFEED);
+	writel(0xaa, HW_WATCHDOG_WDFEED);
+	writel(0x55, HW_WATCHDOG_WDFEED);
 }
 
 /*
