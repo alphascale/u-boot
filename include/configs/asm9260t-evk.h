@@ -31,6 +31,7 @@
 
 /* Define actual evaluation board type from used processor type */
 #define CONFIG_ASM9260T_EVK
+#define CONFIG_SYS_GENERIC_BOARD       1
 
 /* Misc CPU related */
 #define CONFIG_ARCH_CPU_INIT
